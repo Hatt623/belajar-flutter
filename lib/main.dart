@@ -1,3 +1,4 @@
+import 'package:belajar_flutter/row_column/latihan3.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -21,38 +22,49 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 97, 99, 102),
         ),
 
-        body: Container( 
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [const Color.fromARGB(255, 127, 129, 133), const Color.fromARGB(255, 172, 171, 176)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+        body: latihan3(),
+      ),
+    );
+  }
+}
+
+class BelajarContainer extends StatelessWidget {
+  const BelajarContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container( 
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [const Color.fromARGB(255, 127, 129, 133), const Color.fromARGB(255, 172, 171, 176)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+    
+      child: Container(
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.amber,
+          borderRadius: BorderRadius.circular(8),
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(255, 152, 163, 168), Color.fromARGB(255, 173, 193, 196), Colors.white],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-
-          child: Container(
-            margin: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(8),
-              gradient: LinearGradient(
-                colors: [Color.fromARGB(255, 152, 163, 168), Color.fromARGB(255, 173, 193, 196), Colors.white],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-
-            child: Center(
-              child: Text(
-                'Hello flutter',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
+        ),
+    
+        child: Center(
+          child: Text(
+            'Hello flutter',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
         ),
