@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/row_column/latihan3.dart';
+import 'package:belajar_flutter/row_column/Latihan4.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 97, 99, 102),
         ),
 
-        body: latihan3(),
+        body: Latihan4(),
       ),
     );
   }
