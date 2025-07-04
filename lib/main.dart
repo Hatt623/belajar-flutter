@@ -1,4 +1,5 @@
-import 'package:belajar_flutter/row_column/Latihan4.dart';
+import 'package:belajar_flutter/belajar_mandiri/Navgiation.dart';
+import 'package:belajar_flutter/belajar_mandiri/buttons.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -22,8 +23,11 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 97, 99, 102),
         ),
 
-        body: Latihan4(),
+        body: Navigation(),
       ),
+      routes: {
+        '/buttons':(context) => const buttons()
+      },
     );
   }
 }
