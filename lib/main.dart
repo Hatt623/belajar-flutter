@@ -1,8 +1,7 @@
-import 'package:belajar_flutter/belajar_mandiri/Navgiation.dart';
-import 'package:belajar_flutter/belajar_mandiri/buttons.dart';
+import 'package:belajar_flutter/main_layout.dart';
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -13,67 +12,30 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Scaffold(
-
-        appBar: AppBar(
-          title: Text('Belajar Flutter', 
-            style: TextStyle(fontSize: 24, color: Color.fromARGB(255, 94, 225, 216)),
-          ),
-          centerTitle: true,
-          backgroundColor: const Color.fromARGB(255, 97, 99, 102),
-        ),
-
-        body: Navigation(),
-      ),
-      routes: {
-        '/buttons':(context) => const buttons()
-      },
+      home: HelloFlutter(),
     );
   }
 }
 
-class BelajarContainer extends StatelessWidget {
-  const BelajarContainer({
+class HelloFlutter extends StatelessWidget {
+  const HelloFlutter({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container( 
-      width: double.infinity,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [const Color.fromARGB(255, 127, 129, 133), const Color.fromARGB(255, 172, 171, 176)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-    
-      child: Container(
-        margin: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.circular(8),
-          gradient: LinearGradient(
-            colors: [Color.fromARGB(255, 152, 163, 168), Color.fromARGB(255, 173, 193, 196), Colors.white],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-    
-        child: Center(
-          child: Text(
-            'Hello flutter',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+    return MainLayout(
+      title: 'Belajar Flutter',
+      body: Center(
+        child: Text('Hello Flutter', 
+          style: TextStyle(
+            fontSize: 24,
+            color: Color.fromARGB(255, 94, 225, 216),
+            fontWeight: FontWeight.w400,
+            backgroundColor: const Color.fromARGB(255, 97, 99, 102),
             ),
-          ),
         ),
       ),
     );
   }
 }
-
