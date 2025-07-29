@@ -1,5 +1,5 @@
+import 'package:belajar_flutter/latihan/latihan_dua.dart';
 import 'package:belajar_flutter/main_layout.dart';
-import 'package:belajar_flutter/stack_widget/stack_tiga.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StackTiga(),
+      home: LatihanDua(),
     );
   }
 }
