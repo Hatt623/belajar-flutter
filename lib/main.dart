@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/latihan/latihan_dua.dart';
+import 'package:belajar_flutter/grid_view/grid_screen.dart';
 import 'package:belajar_flutter/main_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LatihanDua(),
+      home: GridProductPage(),
     );
   }
 }
