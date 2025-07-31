@@ -9,21 +9,24 @@ class RoadList extends StatelessWidget {
   final List<Map<String, String>> Allmateri = [
     {
     'title': 'Logika Dasar',
-    'description': 'Belajar dasar PHP',
+    'description': 'Belajar Logika dasar PHP',
+    'mapel': 'lorem Ipsum dolor sit amet',
     'image': 'https://picsum.photos/200?1',
     'category': 'PHP',
     },
 
     {
       'title': 'OOP Flutter',
-      'description': 'Belajar dasar Flutter',
+      'description': 'Belajar OOP Flutter dasar',
+      'mapel': 'lorem Ipsum dolor sit amet',
       'image': 'https://picsum.photos/200?2',
       'category': 'Flutter',
     },
     
     {
       'title': 'Routing Laravel',
-      'description': 'Belajar dasar Laravel',
+      'description': 'Belajar Routing dasar Laravel',
+      'mapel': 'lorem Ipsum dolor sit amet',
       'image': 'https://picsum.photos/200?3',
       'category': 'Laravel',
     },
@@ -31,6 +34,7 @@ class RoadList extends StatelessWidget {
     {
       'title': 'Perkenalan HTML',
       'description': 'Perkenalan dasar HTML',
+      'mapel': 'lorem Ipsum dolor sit amet',
       'image': 'https://picsum.photos/200?4',
       'category': 'HTML',
     },

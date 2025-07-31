@@ -13,9 +13,23 @@ class MateriDetail extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20,),
-            Image.network(data['image']!, height: 200,),
+            Container(
+              margin: EdgeInsets.all(20),
+              height: 200,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(data['image']!),
+                  fit: BoxFit.cover
+                  ),
+                    borderRadius: BorderRadius.circular(15)
+              ),
+            ),
+            // Image.network(data['image']!, height: 200,width: double.infinity),
             const SizedBox(height: 20,),
-            Text(data['description']!, style: const TextStyle(fontSize: 10),)
+            Text(data['description']!, style: const TextStyle(fontSize: 10),),
+            const SizedBox(height: 20,),
+            Text(data['mapel']!, style: const TextStyle(fontSize: 20),),
           ],          
           
         ),

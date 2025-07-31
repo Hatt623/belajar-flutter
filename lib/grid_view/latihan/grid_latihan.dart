@@ -6,15 +6,15 @@ class GridLatihan extends StatelessWidget {
   const GridLatihan({super.key});
 
   final List<Map<String, String>> roadmap = const [
-    {
-      'name': 'PHP',
+     {
+      'name': 'HTML',
       'durasi': '1 bulan',
       'image': 'https://picsum.photos/200?1'
     },
     {
-      'name': 'Flutter',
+      'name': 'PHP',
       'durasi': '1 bulan',
-      'image': 'https://picsum.photos/200/?2'
+      'image': 'https://picsum.photos/200?2'
     },
     {
       'name': 'Laravel',
@@ -22,9 +22,9 @@ class GridLatihan extends StatelessWidget {
       'image': 'https://picsum.photos/200?3'
     },
     {
-      'name': 'HTML',
+      'name': 'Flutter',
       'durasi': '1 bulan',
-      'image': 'https://picsum.photos/200?4'
+      'image': 'https://picsum.photos/200/?4'
     },
   ];
 
