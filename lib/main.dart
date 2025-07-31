@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/grid_view/latihan/grid_latihan.dart';
+import 'package:belajar_flutter/form_widget/input_screen.dart';
 import 'package:belajar_flutter/main_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GridLatihan(),
+      home: BelajarForm(),
     );
   }
 }
