@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/latihan/demoUjian/register.dart';
+import 'package:belajar_flutter/latihan/ujian/main_page.dart';
 import 'package:belajar_flutter/main_layout.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterForm(),
+      home: CourseMainPage(),
     );
   }
 }
