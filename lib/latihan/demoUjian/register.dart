@@ -19,9 +19,9 @@ class _RegisterFormState extends State<RegisterForm> {
 
   String _jk = "";
   String? _jkError;
-  String _pilihAgama = "";
+  String _chooseReligion = "";
 
-  final List<String> agama = [
+  final List<String> religion = [
     "Islam",
     "Protestan",
     "Katholik",
@@ -54,13 +54,15 @@ class _RegisterFormState extends State<RegisterForm> {
                 ),
                 child: Padding(
               padding: const EdgeInsets.all(24),
+
+              // form register
               child: Form(
                 key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      "Formulir Biodata",
+                      "Register Form",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -77,7 +79,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         border: OutlineInputBorder(),
                       ),
                       validator: (value) {
-                        if (value!.isEmpty) return 'Input Nama';
+                        if (value!.isEmpty) return 'Input Name';
                         return null;
                       },
                     ),
@@ -97,7 +99,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     Row(
                       children: [
                         Radio<String>(
-                          value: "Laki-laki",
+                          value: "Man",
                           groupValue: _jk,
                           onChanged: (value) {
                             setState(() {
@@ -106,11 +108,11 @@ class _RegisterFormState extends State<RegisterForm> {
                             });
                           },
                         ),
-                        Text("Laki-laki"),
+                        Text("Man"),
                         SizedBox(width: 24),
 
                         Radio<String>(
-                          value: "Perempuan",
+                          value: "Woman",
                           groupValue: _jk,
                           onChanged: (value) {
                             setState(() {
@@ -119,7 +121,7 @@ class _RegisterFormState extends State<RegisterForm> {
                             });
                           },
                         ),
-                        Text("Perempuan"),
+                        Text("Woman"),
                       ],
                     ),
                     if (_jkError != null)
@@ -132,15 +134,15 @@ class _RegisterFormState extends State<RegisterForm> {
                       ),
                     const SizedBox(height: 18),
 
-                    // Tanggal Lahir
+                    // birth date
                     TextFormField(
                       controller: tglLahirController,
                       decoration: InputDecoration(
-                        hintText: "Tanggal Lahir",
+                        hintText: "Birth Date",
                         border: OutlineInputBorder(),
                       ),
                       validator: (value) {
-                        if (value!.isEmpty) return 'Input Tanggal Lahir';
+                        if (value!.isEmpty) return 'Input birth date';
                         return null;
                       },
                       readOnly: true,
@@ -161,14 +163,14 @@ class _RegisterFormState extends State<RegisterForm> {
                     ),
                     const SizedBox(height: 18),
 
-                    // Pilih Agama
+                    // Pilih religion
                     DropdownButtonFormField<String>(
                       decoration: InputDecoration(
-                        labelText: "Pilih Agama",
+                        labelText: "Pilih religion",
                         border: OutlineInputBorder(),
                       ),
                       items:
-                        agama
+                        religion
                           .map(
                             (item) => DropdownMenuItem(
                               value: item,
@@ -178,12 +180,12 @@ class _RegisterFormState extends State<RegisterForm> {
                           .toList(),
                       onChanged: (value) {
                         setState(() {
-                          _pilihAgama = value!;
+                          _chooseReligion = value!;
                         });
                       },
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Pilih agama';
+                          return 'Pilih religion';
                         }
                         return null;
                       },
@@ -212,6 +214,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       ],
                     ),
                   ),
+
                 ),
               ),
             ),
@@ -224,7 +227,7 @@ class _RegisterFormState extends State<RegisterForm> {
   void _submit() {
       final isValid = _formKey.currentState!.validate();
       if (_jk.isEmpty) {
-        setState(() => _jkError = 'Pilih Jenis Kelamin');
+        setState(() => _jkError = 'Choose a gender!');
       }
 
       if (!isValid || _jk.isEmpty) return;
@@ -234,7 +237,7 @@ class _RegisterFormState extends State<RegisterForm> {
         MaterialPageRoute(
           builder: 
             (context) => Package(
-              agama: _pilihAgama,
+              religion: _chooseReligion,
             ),
         ),
       );

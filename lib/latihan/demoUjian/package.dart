@@ -3,11 +3,11 @@ import 'package:belajar_flutter/main_layout.dart';
 import 'package:flutter/material.dart';
 
 class Package extends StatelessWidget {
-  final String agama;
+  final String religion;
 
   Package({
     Key? key,
-    required this.agama,
+    required this.religion,
   }) : super(key: key);
 
   final List<Map<String, String>> package = const [
@@ -38,7 +38,7 @@ class Package extends StatelessWidget {
         child: GridView.builder(
           itemCount: package.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // 2 Kolom
+            crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             childAspectRatio: 0.8,

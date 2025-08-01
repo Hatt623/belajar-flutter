@@ -1,4 +1,3 @@
-import 'package:belajar_flutter/main_layout.dart';
 import 'package:flutter/material.dart';
 
 class StackDua extends StatelessWidget {

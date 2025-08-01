@@ -21,6 +21,8 @@ class PaymentDetail extends StatefulWidget {
 class _PaymentDetailState extends State<PaymentDetail> {
   final TextEditingController _paymentController = TextEditingController();
   final priceController = NumberFormat.currency(locale: 'id', symbol: 'Rp');
+  final _formKey = GlobalKey<FormState>();
+
   bool _isPaid = false;
 
   @override
@@ -49,27 +51,37 @@ class _PaymentDetailState extends State<PaymentDetail> {
                   Text(priceController.format(totalPrice),
                       style: const TextStyle(fontSize: 13)),
                   SizedBox(height: 24),
-                  TextField(
-                    controller: _paymentController,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: 'Enter Payment Amount',
-                      border: OutlineInputBorder(),
+
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: _paymentController,
+                          decoration: InputDecoration(
+                            hintText: 'Enter Payment',
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          validator: (value) {
+                            final inputAmount = int.tryParse(value!) ?? 0;
+                            if (inputAmount != totalPrice) {
+                              return 'Nominal must be at: ${priceController.format(totalPrice)}';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(height: 16),
+                        ElevatedButton(
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              setState(() => _isPaid = true);
+                            }
+                          },
+                          child: Text('Pay'),
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      int inputAmount = int.tryParse(_paymentController.text) ?? 0;
-                      if (inputAmount == totalPrice) {
-                        setState(() => _isPaid = true);
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Nominal must be at: Rp$totalPrice')),
-                        );
-                      }
-                    },
-                    child: Text('Pay'),
                   ),
                 ],
               ),
@@ -104,4 +116,5 @@ class _PaymentDetailState extends State<PaymentDetail> {
       ),
     );
   }
+  
 }
